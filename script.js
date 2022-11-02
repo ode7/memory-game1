@@ -57,13 +57,16 @@ function createBoard() {
     const card = document.createElement('img')
     card.setAttribute('src', 'https://stackblitz.com/files/web-platform-emme2g/github/ode7/memory-game1/main/image/blank.png')
     card.setAttribute('data-id', i)
-    card.addEventListener('click',flipcard)
+    card.addEventListener('click',flipcard())
     grid.append(card)
   }
 }
 createBoard()
 function flipcard(){
+  console.log(cardArray)
   const cardId = this.getAtttribute('data-id')
+  console.log('clicked',cardId)
+  console.log(cardChosen)
   cardChosen.push(cardArray[cardId].name)
-  this.setAttribute('src',cardArray[cardId].img)
+  
 }
